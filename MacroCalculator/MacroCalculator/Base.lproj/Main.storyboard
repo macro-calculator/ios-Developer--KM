@@ -79,6 +79,7 @@
                         <outlet property="entryMethodSegmentedControl" destination="1mh-wk-C2e" id="G60-fO-vo1"/>
                         <outlet property="passwordTextField" destination="y3t-lN-SXX" id="VqC-wK-qC5"/>
                         <outlet property="usernameTextField" destination="RJh-KS-NR1" id="Uqe-Qp-ivA"/>
+                        <segue destination="4m7-hM-vRD" kind="show" identifier="SetupUserSegue" id="vsu-Dj-JuY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDO-D8-sxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,6 +104,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdr-UE-7ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3144.9275362318845" y="162.72321428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Bx-vs-o9N">
+            <objects>
+                <viewController id="daa-0m-fI4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S6b-83-g9r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9VZ-Qq-0Yh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3v-2b-nOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4074" y="163"/>
+        </scene>
+        <!--User Setup View Controller-->
+        <scene sceneID="gEe-nl-V6z">
+            <objects>
+                <viewController id="4m7-hM-vRD" customClass="UserSetupViewController" customModule="MacroCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jJg-FH-GOI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SmH-EC-KCf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jn-lI-U5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4055" y="873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mdo-RR-yp5">

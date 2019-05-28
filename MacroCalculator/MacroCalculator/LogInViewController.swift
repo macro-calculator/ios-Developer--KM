@@ -28,7 +28,6 @@ class LogInViewController: UIViewController {
     
     
     
-    
     @IBAction func entryTypeChanged(_ sender: UISegmentedControl) {
         if entryMethodSegmentedControl.selectedSegmentIndex == 0 {
             entryType = .logIn
@@ -53,19 +52,15 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if entryType == .logIn {
+            enterButton.setTitle("Log In", for: .normal)
+            entryMethodSegmentedControl.selectedSegmentIndex = 0
+        } else {
+            enterButton.setTitle("Sign Up", for: .normal)
+            entryMethodSegmentedControl.selectedSegmentIndex = 1
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
