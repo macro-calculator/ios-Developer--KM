@@ -16,6 +16,7 @@
 		C4EEEF15229D9EE50098CCB4 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF14229D9EE50098CCB4 /* SummaryViewController.swift */; };
 		C4EEEF17229D9FE70098CCB4 /* UserSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF16229D9FE70098CCB4 /* UserSetupViewController.swift */; };
 		C4EEEF19229DA0220098CCB4 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF18229DA0220098CCB4 /* MealViewController.swift */; };
+		C4EEEF1B229DEFC50098CCB4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF1A229DEFC50098CCB4 /* AppearanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		C4EEEF14229D9EE50098CCB4 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		C4EEEF16229D9FE70098CCB4 /* UserSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetupViewController.swift; sourceTree = "<group>"; };
 		C4EEEF18229DA0220098CCB4 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
+		C4EEEF1A229DEFC50098CCB4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				C4EEEEF2229D92A40098CCB4 /* AppDelegate.swift */,
 				C4EEEEF6229D92A40098CCB4 /* Main.storyboard */,
+				C4EEEF1A229DEFC50098CCB4 /* AppearanceHelper.swift */,
 				C4EEEF12229D975A0098CCB4 /* LogInViewController.swift */,
 				C4EEEF16229D9FE70098CCB4 /* UserSetupViewController.swift */,
 				C4EEEF14229D9EE50098CCB4 /* SummaryViewController.swift */,
@@ -211,6 +214,7 @@
 				C4EEEEF3229D92A40098CCB4 /* AppDelegate.swift in Sources */,
 				C4EEEF15229D9EE50098CCB4 /* SummaryViewController.swift in Sources */,
 				C4EEEF17229D9FE70098CCB4 /* UserSetupViewController.swift in Sources */,
+				C4EEEF1B229DEFC50098CCB4 /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

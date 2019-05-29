@@ -41,6 +41,8 @@ class LogInViewController: UIViewController {
     
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -52,6 +54,13 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor]
+        
+        view.layer.insertSublayer(gradient, at: 0)
+        
         if entryType == .logIn {
             enterButton.setTitle("Log In", for: .normal)
             entryMethodSegmentedControl.selectedSegmentIndex = 0
