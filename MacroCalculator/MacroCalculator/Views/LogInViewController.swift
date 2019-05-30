@@ -11,7 +11,6 @@ import UIKit
 class LogInViewController: UIViewController {
 
     let userController = UserController()
-    var user: User?
     
     @IBOutlet weak var entryMethodSegmentedControl: UISegmentedControl!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -45,31 +44,24 @@ class LogInViewController: UIViewController {
             let password = passwordTextField.text else { return }
         
         
-        if !username.isEmpty && !username.isEmpty {
+        if username == "kmac" && password == "password" {
             
             if entryType == .logIn {
-                userController.logIn(username: username, password: password) { (error) in
-                    if let error = error {
-                        NSLog("Error logging in \(error)")
-                    } else {
-                        DispatchQueue.main.async {
-                            self.dismiss(animated: true, completion: nil)
-                        }
+                userController.currentUser = User(username: "kmac", password: "password", name: "Kobe", email: "kobe@gmail", gender: "Male", age: 22, height: 70, currentWeight: 150, activityLevel: "3-4 days", goal: "Moderate Weight Loss(15% deficit)")
+                
+                dismiss(animated: true) {
+                    if let presenter = self.presentingViewController as? SummaryViewController{
+                        presenter.userController = self.userController
+                        
                     }
                 }
                 
-            } else {
+            } else if !username.isEmpty && !password.isEmpty{
                 performSegue(withIdentifier: "SetupUserSegue", sender: self)
             }
             
         } else { return }
     }
-    
-    
-    
-    
-    
-    
     
     
     override func viewDidLoad() {
@@ -99,6 +91,7 @@ class LogInViewController: UIViewController {
             destinationVC.username = username
             destinationVC.password = password
         }
+        
     }
     
 

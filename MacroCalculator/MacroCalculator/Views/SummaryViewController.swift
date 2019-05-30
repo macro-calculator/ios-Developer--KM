@@ -10,7 +10,7 @@ import UIKit
 
 class SummaryViewController: UIViewController {
 
-    var username: String?
+    var userController: UserController?
     
     
     
@@ -28,11 +28,25 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var fatsTotalLabel: UILabel!
     @IBOutlet weak var carbsTotalLabel: UILabel!
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if userController?.currentUser == nil {
+            performSegue(withIdentifier: "EntrySegue", sender: self)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyle()
+        guard let user = userController?.currentUser else { return }
+        updateValues(user: user)
+    }
+    
 
-        //view.backgroundColor = AppearanceHelper.lightLime
+    func setStyle() {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor, AppearanceHelper.darkGreen.cgColor]
@@ -48,19 +62,11 @@ class SummaryViewController: UIViewController {
         proteinTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
         fatsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
         carbsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
-          
     }
-    
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        if username == nil {
-            performSegue(withIdentifier: "EntrySegue", sender: self)
-        }
-        
+    func updateValues(user: User) {
+        userController?.calculateMacros(user: user)
     }
-    
-    
     
     
     /*

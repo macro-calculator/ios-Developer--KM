@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C425C8D6229F802400426BDC /* GoodChoice.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C425C8D5229F802300426BDC /* GoodChoice.ttf */; };
+		C435416922A060210095CFBA /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435416822A060210095CFBA /* UserController.swift */; };
 		C4EEEEF3229D92A40098CCB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEEF2229D92A40098CCB4 /* AppDelegate.swift */; };
 		C4EEEEF8229D92A40098CCB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4EEEEF6229D92A40098CCB4 /* Main.storyboard */; };
 		C4EEEEFA229D92A50098CCB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4EEEEF9229D92A50098CCB4 /* Assets.xcassets */; };
@@ -19,8 +20,6 @@
 		C4EEEF19229DA0220098CCB4 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF18229DA0220098CCB4 /* MealViewController.swift */; };
 		C4EEEF1B229DEFC50098CCB4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF1A229DEFC50098CCB4 /* AppearanceHelper.swift */; };
 		C4EEEF26229F2DE30098CCB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF25229F2DE30098CCB4 /* User.swift */; };
-		C4EEEF2A229F2F4E0098CCB4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF29229F2F4E0098CCB4 /* UserController.swift */; };
-		C4EEEF2C229F2FB40098CCB4 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEF2B229F2FB40098CCB4 /* Bearer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		C425C8D5229F802300426BDC /* GoodChoice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoodChoice.ttf; sourceTree = "<group>"; };
+		C435416822A060210095CFBA /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		C4EEEEEF229D92A40098CCB4 /* MacroCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EEEEF2229D92A40098CCB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4EEEEF7229D92A40098CCB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,8 +50,6 @@
 		C4EEEF18229DA0220098CCB4 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		C4EEEF1A229DEFC50098CCB4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		C4EEEF25229F2DE30098CCB4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C4EEEF29229F2F4E0098CCB4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		C4EEEF2B229F2FB40098CCB4 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C4EEEF25229F2DE30098CCB4 /* User.swift */,
-				C4EEEF2B229F2FB40098CCB4 /* Bearer.swift */,
+				C435416822A060210095CFBA /* UserController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				C4EEEF1A229DEFC50098CCB4 /* AppearanceHelper.swift */,
-				C4EEEF29229F2F4E0098CCB4 /* UserController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,8 +245,7 @@
 			files = (
 				C4EEEF13229D975A0098CCB4 /* LogInViewController.swift in Sources */,
 				C4EEEF19229DA0220098CCB4 /* MealViewController.swift in Sources */,
-				C4EEEF2C229F2FB40098CCB4 /* Bearer.swift in Sources */,
-				C4EEEF2A229F2F4E0098CCB4 /* UserController.swift in Sources */,
+				C435416922A060210095CFBA /* UserController.swift in Sources */,
 				C4EEEEF3229D92A40098CCB4 /* AppDelegate.swift in Sources */,
 				C4EEEF15229D9EE50098CCB4 /* SummaryViewController.swift in Sources */,
 				C4EEEF17229D9FE70098CCB4 /* UserSetupViewController.swift in Sources */,

@@ -11,7 +11,6 @@ import UIKit
 class UserSetupViewController: UIViewController {
 
     var userController: UserController?
-    var user: User?
     var username: String?
     var password: String?
     
@@ -33,18 +32,29 @@ class UserSetupViewController: UIViewController {
         AppearanceHelper.style2(button: saveButton)
 
         view.backgroundColor = AppearanceHelper.lightLime
-//        let gradient = CAGradientLayer()
-//        gradient.frame = view.bounds
-//        gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor, AppearanceHelper.darkGreen.cgColor]
-//        view.layer.insertSublayer(gradient, at: 0)
     }
     
 
     @IBAction func save(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "TestingSummarySegue", sender: self)
+        guard let username = username,
+            let password = password,
+            let name = nameTextField.text,
+            let email = emailTextField.text,
+            let gender = genderTextField.text,
+            let age = ageTextField.text,
+            let formattedAge = Int(age),
+            let height = heightTextField.text,
+            let formattedHeight = Int(height),
+            let weight = weightTextField.text,
+            let formattedWeight = Int(weight),
+            let activityLevel = activityLevelTextField.text,
+            let goal = goalTextField.text else { return }
         
+            userController?.createUser(username: username, password: password, name: name, email: email, gender: gender, age: formattedAge, height: formattedHeight, currentWeight: formattedWeight, activityLevel: activityLevel, goal: goal)
         
+            performSegue(withIdentifier: "ToSummarySegue", sender: self)
+
     }
     
     
@@ -54,7 +64,7 @@ class UserSetupViewController: UIViewController {
 
         if segue.identifier == "TestingSummarySegue" {
             guard let destinationVC = segue.destination as? SummaryViewController else { return }
-            destinationVC.username = username
+            destinationVC.userController = userController
         }
     }
 
