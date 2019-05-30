@@ -16,14 +16,23 @@ enum AppearanceHelper {
     static let lightLime = UIColor(red: 199 / 255, green: 221 / 255, blue: 204 / 255, alpha: 1)
     static let offWhite =  UIColor(red: 254 / 255, green: 254 / 255, blue: 253 / 255, alpha: 1)
 
+    
+    
+    
+    static func threeDFont(textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont {
+        let font = UIFont(name: "Good Choice", size: pointSize)!
+        let dynamicFont = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
+        return dynamicFont
+    }
+    
+    
     static func setTheme() {
-        
-        
-        
+
         UISegmentedControl.appearance().backgroundColor = darkGreen
         UISegmentedControl.appearance().tintColor = lightLime
         
         UITextField.appearance().backgroundColor = offWhite
+        UINavigationBar.appearance().tintColor = lightGreen
         
         
     }

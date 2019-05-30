@@ -118,9 +118,9 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-4v-whL">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-4v-whL">
                                                                 <rect key="frame" x="0.0" y="35.5" width="127.5" height="209.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -220,9 +220,9 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-CZ-F0M">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-CZ-F0M">
                                                                 <rect key="frame" x="0.0" y="35.5" width="127.5" height="210"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -245,7 +245,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4S-8o-qg8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4S-8o-qg8">
                                                                 <rect key="frame" x="0.0" y="28.5" width="127" height="217"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -320,8 +320,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="carbsPercentageLabel" destination="ghd-p8-4F1" id="sgI-1R-rar"/>
+                        <outlet property="carbsTotalLabel" destination="wjr-vZ-mvX" id="Rjf-u0-fmS"/>
+                        <outlet property="fatsPercentageLabel" destination="g6I-66-YTu" id="7nZ-Xc-bvR"/>
+                        <outlet property="fatsTotalLabel" destination="s4S-8o-qg8" id="yqU-PY-BNc"/>
                         <outlet property="goalsView" destination="oDz-3c-cXw" id="720-vB-f4Z"/>
                         <outlet property="mealsView" destination="aRO-bg-tZB" id="U8G-c5-O2d"/>
+                        <outlet property="proteinPercentageLabel" destination="wHJ-4v-whL" id="cpr-dw-0ET"/>
+                        <outlet property="proteinTotalLabel" destination="dx9-CZ-F0M" id="D6I-u2-pCf"/>
                         <segue destination="wZT-lw-cP9" kind="presentation" identifier="EntrySegue" id="MYE-9y-eLn"/>
                     </connections>
                 </viewController>
