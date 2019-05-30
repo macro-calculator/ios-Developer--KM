@@ -34,15 +34,16 @@ class SummaryViewController: UIViewController {
         if userController?.currentUser == nil {
             performSegue(withIdentifier: "EntrySegue", sender: self)
         }
+        guard let user = userController?.currentUser else { return }
+        updateValues(user: user)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setStyle()
         guard let user = userController?.currentUser else { return }
-        updateValues(user: user)
+        setStyle()
+        showMacros(user: user)
     }
     
 
@@ -55,17 +56,36 @@ class SummaryViewController: UIViewController {
         goalsView.backgroundColor = .clear
         mealsView.backgroundColor = .clear
         
-        proteinPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
-        fatsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
-        carbsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
+        proteinPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
+        fatsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
+        carbsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
         
-        proteinTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
-        fatsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
-        carbsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 64)
+        proteinTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
+        fatsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
+        carbsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
     }
 
     func updateValues(user: User) {
         userController?.calculateMacros(user: user)
+    }
+    
+
+    func showMacros(user: User) {
+        let proPerc = user.proteinsPercentage!
+        let fatPerc = user.fatsPercentage!
+        let carbPerc = user.carbsPercentage!
+        
+        let proTot = user.dailyProteins!
+        let fatTot = user.dailyFats!
+        let carbTot = user.dailyCarbs!
+        
+        proteinPercentageLabel.text = "\(proPerc)%"
+        fatsPercentageLabel.text = "\(fatPerc)%"
+        carbsPercentageLabel.text = "\(carbPerc)%"
+        
+        proteinTotalLabel.text = "\(proTot)%"
+        fatsTotalLabel.text = "\(fatTot)%"
+        carbsTotalLabel.text = "\(carbTot)%"
     }
     
     

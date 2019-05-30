@@ -80,11 +80,12 @@
                         <outlet property="passwordTextField" destination="y3t-lN-SXX" id="VqC-wK-qC5"/>
                         <outlet property="usernameTextField" destination="RJh-KS-NR1" id="Uqe-Qp-ivA"/>
                         <segue destination="4m7-hM-vRD" kind="presentation" identifier="SetupUserSegue" id="vsu-Dj-JuY"/>
+                        <segue destination="kSY-2e-0gw" kind="show" identifier="ToSummary" id="qbD-A1-avQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDO-D8-sxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3145" y="873"/>
+            <point key="canvasLocation" x="2523" y="873"/>
         </scene>
         <!--Summary-->
         <scene sceneID="xuO-C4-IwF">
@@ -567,6 +568,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vsu-Dj-JuY"/>
-        <segue reference="hW4-8A-WZk"/>
+        <segue reference="qbD-A1-avQ"/>
     </inferredMetricsTieBreakers>
 </document>

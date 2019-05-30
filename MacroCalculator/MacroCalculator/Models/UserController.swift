@@ -115,10 +115,14 @@ class UserController {
         updatedUser.bmr = bmr
 
         let goalFactor = getGoalFactor(goal: user.goal)
+        print(goalFactor)
         let activityFactor = getActivityFactor(activity: user.activityLevel)
+        print(activityFactor)
         
         let tdee = bmr * activityFactor
+        print(tdee)
         let totalCal = tdee * goalFactor
+        print(totalCal)
         updatedUser.totalCal = totalCal
         
         updatedUser.dailyProteins = totalCal * 0.075
@@ -133,9 +137,13 @@ class UserController {
         updatedUser.fatsPercentage = totalCal / fats
         updatedUser.carbsPercentage = totalCal / carbs
         
+        //print(currentUser)
+        //print(updatedUser)
+        
+        
         
         currentUser = updatedUser
-        
+        print(currentUser)
         
     }
     

@@ -47,14 +47,9 @@ class LogInViewController: UIViewController {
         if username == "kmac" && password == "password" {
             
             if entryType == .logIn {
-                userController.currentUser = User(username: "kmac", password: "password", name: "Kobe", email: "kobe@gmail", gender: "Male", age: 22, height: 70, currentWeight: 150, activityLevel: "3-4 days", goal: "Moderate Weight Loss(15% deficit)")
+                userController.currentUser = User(username: "kmac", password: "password", name: "Kobe", email: "kobe@gmail", gender: "M", age: 22, height: 70, currentWeight: 150, activityLevel: "3-4 days", goal: "Moderate Weight Loss(15% deficit)")
                 
-                dismiss(animated: true) {
-                    if let presenter = self.presentingViewController as? SummaryViewController{
-                        presenter.userController = self.userController
-                        
-                    }
-                }
+                performSegue(withIdentifier: "ToSummary", sender: self)
                 
             } else if !username.isEmpty && !password.isEmpty{
                 performSegue(withIdentifier: "SetupUserSegue", sender: self)
@@ -90,6 +85,9 @@ class LogInViewController: UIViewController {
                 let password = passwordTextField.text else { return }
             destinationVC.username = username
             destinationVC.password = password
+        } else if segue.identifier == "ToSummary" {
+            guard let destinationVC = segue.destination as? SummaryViewController else { return }
+            destinationVC.userController = userController
         }
         
     }
