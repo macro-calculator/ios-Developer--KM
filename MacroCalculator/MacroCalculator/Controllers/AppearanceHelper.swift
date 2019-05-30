@@ -18,8 +18,7 @@ enum AppearanceHelper {
 
     static func setTheme() {
         
-        UIButton.appearance().backgroundColor = lightLime
-        UIButton.appearance().tintColor = darkGreen
+        
         
         UISegmentedControl.appearance().backgroundColor = darkGreen
         UISegmentedControl.appearance().tintColor = lightLime
@@ -28,6 +27,19 @@ enum AppearanceHelper {
         
         
     }
+    
+    static func style(button: UIButton) {
+        button.backgroundColor = lightLime
+        button.tintColor = darkGreen
+        button.layer.cornerRadius = 8
+    }
+    
+    static func style2(button: UIButton) {
+        button.backgroundColor = darkGreen
+        button.tintColor = lightLime
+        button.layer.cornerRadius = 8
+    }
+    
     
 }
 

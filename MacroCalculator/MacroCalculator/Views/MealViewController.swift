@@ -1,5 +1,5 @@
 //
-//  SummaryViewController.swift
+//  MealViewController.swift
 //  MacroCalculator
 //
 //  Created by Kobe McKee on 5/28/19.
@@ -8,24 +8,18 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController {
+class MealViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor]
+        view.layer.insertSublayer(gradient, at: 0)
     }
     
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        performSegue(withIdentifier: "EntrySegue", sender: self)
-    }
-    
-    
-    
-    
     /*
     // MARK: - Navigation
 

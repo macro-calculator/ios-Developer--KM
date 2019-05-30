@@ -10,6 +10,8 @@ import UIKit
 
 class LogInViewController: UIViewController {
 
+    let userController = UserController()
+    var user: User?
     
     @IBOutlet weak var entryMethodSegmentedControl: UISegmentedControl!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -21,12 +23,10 @@ class LogInViewController: UIViewController {
         case logIn
     }
     
-    
-    //var apiController: APIController?
-    
     var entryType: EntryType = .signUp
     
-    
+    var username: String = ""
+    var password: String = ""
     
     @IBAction func entryTypeChanged(_ sender: UISegmentedControl) {
         if entryMethodSegmentedControl.selectedSegmentIndex == 0 {
@@ -41,8 +41,28 @@ class LogInViewController: UIViewController {
     
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
+        guard let username = usernameTextField.text,
+            let password = passwordTextField.text else { return }
         
-        dismiss(animated: true, completion: nil)
+        
+        if !username.isEmpty && !username.isEmpty {
+            
+            if entryType == .logIn {
+                userController.logIn(username: username, password: password) { (error) in
+                    if let error = error {
+                        NSLog("Error logging in \(error)")
+                    } else {
+                        DispatchQueue.main.async {
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
+                
+            } else {
+                performSegue(withIdentifier: "SetupUserSegue", sender: self)
+            }
+            
+        } else { return }
     }
     
     
@@ -55,10 +75,11 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppearanceHelper.style(button: enterButton)
+        
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
-        gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor]
-        
+        gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor, AppearanceHelper.darkGreen.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
         
         if entryType == .logIn {
@@ -67,6 +88,16 @@ class LogInViewController: UIViewController {
         } else {
             enterButton.setTitle("Sign Up", for: .normal)
             entryMethodSegmentedControl.selectedSegmentIndex = 1
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SetupUserSegue" {
+            guard let destinationVC = segue.destination as? UserSetupViewController,
+                let username = usernameTextField.text,
+                let password = passwordTextField.text else { return }
+            destinationVC.username = username
+            destinationVC.password = password
         }
     }
     
