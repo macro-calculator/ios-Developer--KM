@@ -118,7 +118,6 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func changeMealPlan(_ sender: Any) {
-        var user = userController?.currentUser!
         
         if userController?.currentUser?.mealPlan == "4 meals" {
             userController?.currentUser?.mealPlan = "3 meals"

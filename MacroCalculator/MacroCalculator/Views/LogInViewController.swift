@@ -51,6 +51,8 @@ class LogInViewController: UIViewController {
                 
                 performSegue(withIdentifier: "ToSummary", sender: self)
                 
+            } else if username == userController.currentUser?.username && password == userController.currentUser?.password {
+                performSegue(withIdentifier: "ToSummary", sender: self)
             }
             
         } else if entryType == .signUp {

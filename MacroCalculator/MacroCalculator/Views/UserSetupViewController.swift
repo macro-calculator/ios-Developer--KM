@@ -57,9 +57,12 @@ class UserSetupViewController: UIViewController {
             let activityLevel = activityLevelTextField.text,
             let goal = goalTextField.text else { return }
         
-            userController?.createUser(username: username, password: password, name: name, email: email, gender: gender, age: formattedAge, height: formattedHeight, currentWeight: formattedWeight, activityLevel: activityLevel, goal: goal)
+        userController?.createUser(username: username, password: password, name: name, email: email, gender: gender, age: formattedAge, height: formattedHeight, currentWeight: formattedWeight, activityLevel: activityLevel, goal: goal)
         
-            performSegue(withIdentifier: "ToSummarySegue", sender: self)
+        
+        print(userController?.currentUser?.username)
+        print(userController?.currentUser?.email)
+        performSegue(withIdentifier: "ToSummarySegue", sender: self)
 
     }
     
@@ -68,7 +71,7 @@ class UserSetupViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if segue.identifier == "TestingSummarySegue" {
+        if segue.identifier == "ToSummarySegue" {
             guard let destinationVC = segue.destination as? SummaryViewController else { return }
             destinationVC.userController = userController
         }
