@@ -44,18 +44,20 @@ class LogInViewController: UIViewController {
             let password = passwordTextField.text else { return }
         
         
-        if username == "kmac" && password == "password" {
+        if entryType == .logIn {
             
-            if entryType == .logIn {
+            if username == "kmac" && password == "password" {
                 userController.currentUser = User(username: "kmac", password: "password", name: "Kobe", email: "kobe@gmail", gender: "M", age: 22, height: 70, currentWeight: 150, activityLevel: "3-4 days", goal: "Moderate Weight Loss(15% deficit)")
                 
                 performSegue(withIdentifier: "ToSummary", sender: self)
                 
-            } else if !username.isEmpty && !password.isEmpty{
-                performSegue(withIdentifier: "SetupUserSegue", sender: self)
             }
             
-        } else { return }
+        } else if entryType == .signUp {
+            if !username.isEmpty && !password.isEmpty{
+                performSegue(withIdentifier: "SetupUserSegue", sender: self)
+            }
+        }
     }
     
     

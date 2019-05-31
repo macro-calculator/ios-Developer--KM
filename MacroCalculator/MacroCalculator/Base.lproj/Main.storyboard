@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDO-D8-sxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2523" y="873"/>
+            <point key="canvasLocation" x="1999" y="874"/>
         </scene>
         <!--Summary-->
         <scene sceneID="xuO-C4-IwF">
@@ -299,14 +299,26 @@
                                     <constraint firstAttribute="trailing" secondItem="bZG-tY-me0" secondAttribute="trailing" id="lfm-gr-bBZ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqe-Ow-GP9">
+                                <rect key="frame" x="16" y="665.5" width="382" height="128"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
+                                <state key="normal" title="Meals &gt;"/>
+                                <connections>
+                                    <segue destination="daa-0m-fI4" kind="show" id="nMb-Fd-pUV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oDz-3c-cXw" firstAttribute="height" secondItem="kGh-9W-HNs" secondAttribute="height" multiplier="1/3" id="0km-Mg-pUq"/>
                             <constraint firstItem="gqB-8W-nAq" firstAttribute="trailing" secondItem="aRO-bg-tZB" secondAttribute="trailing" constant="16" id="51d-fl-xfA"/>
                             <constraint firstItem="aRO-bg-tZB" firstAttribute="leading" secondItem="gqB-8W-nAq" secondAttribute="leading" constant="16" id="KcQ-RT-n5a"/>
+                            <constraint firstItem="Kqe-Ow-GP9" firstAttribute="height" secondItem="kGh-9W-HNs" secondAttribute="height" multiplier="1/7" id="QTu-dN-pPe"/>
+                            <constraint firstItem="Kqe-Ow-GP9" firstAttribute="leading" secondItem="gqB-8W-nAq" secondAttribute="leading" constant="16" id="dKQ-G1-yA8"/>
                             <constraint firstItem="oDz-3c-cXw" firstAttribute="top" secondItem="gqB-8W-nAq" secondAttribute="top" constant="16" id="gCC-xV-pT3"/>
                             <constraint firstItem="aRO-bg-tZB" firstAttribute="top" secondItem="oDz-3c-cXw" secondAttribute="bottom" id="gbf-eX-hdv"/>
+                            <constraint firstItem="gqB-8W-nAq" firstAttribute="trailing" secondItem="Kqe-Ow-GP9" secondAttribute="trailing" constant="16" id="iVY-uD-vDo"/>
+                            <constraint firstItem="Kqe-Ow-GP9" firstAttribute="top" secondItem="aRO-bg-tZB" secondAttribute="bottom" constant="8" id="kLE-uS-4N4"/>
                             <constraint firstItem="gqB-8W-nAq" firstAttribute="trailing" secondItem="oDz-3c-cXw" secondAttribute="trailing" constant="16" id="qKT-Sn-yeZ"/>
                             <constraint firstItem="oDz-3c-cXw" firstAttribute="leading" secondItem="gqB-8W-nAq" secondAttribute="leading" constant="16" id="v6B-nv-TxZ"/>
                             <constraint firstItem="aRO-bg-tZB" firstAttribute="height" secondItem="ihL-HN-Fua" secondAttribute="height" id="yKq-4d-SCK"/>
@@ -326,6 +338,7 @@
                         <outlet property="fatsPercentageLabel" destination="g6I-66-YTu" id="7nZ-Xc-bvR"/>
                         <outlet property="fatsTotalLabel" destination="s4S-8o-qg8" id="yqU-PY-BNc"/>
                         <outlet property="goalsView" destination="oDz-3c-cXw" id="720-vB-f4Z"/>
+                        <outlet property="mealsButton" destination="Kqe-Ow-GP9" id="OWo-Ny-nJU"/>
                         <outlet property="mealsView" destination="aRO-bg-tZB" id="U8G-c5-O2d"/>
                         <outlet property="proteinPercentageLabel" destination="wHJ-4v-whL" id="cpr-dw-0ET"/>
                         <outlet property="proteinTotalLabel" destination="dx9-CZ-F0M" id="D6I-u2-pCf"/>
@@ -513,6 +526,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRM-3t-Px0">
+                                <rect key="frame" x="335" y="66.5" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="4m7-hM-vRD" eventType="touchUpInside" id="bH5-qL-fOF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -522,6 +542,8 @@
                             <constraint firstItem="OOI-Fp-T0x" firstAttribute="top" secondItem="SmH-EC-KCf" secondAttribute="top" constant="100" id="VTa-F0-6F3"/>
                             <constraint firstItem="OOI-Fp-T0x" firstAttribute="height" secondItem="jJg-FH-GOI" secondAttribute="height" multiplier="3/5" id="WEM-8E-4a4"/>
                             <constraint firstItem="SmH-EC-KCf" firstAttribute="trailing" secondItem="dqm-5P-SPl" secondAttribute="trailing" constant="16" id="Xgs-OR-f7C"/>
+                            <constraint firstItem="BRM-3t-Px0" firstAttribute="leading" secondItem="wBU-mx-Wkd" secondAttribute="trailing" constant="44" id="aPr-XT-Kzd"/>
+                            <constraint firstItem="BRM-3t-Px0" firstAttribute="centerY" secondItem="wBU-mx-Wkd" secondAttribute="centerY" id="bf2-FW-Ml7"/>
                             <constraint firstItem="SmH-EC-KCf" firstAttribute="trailing" secondItem="OOI-Fp-T0x" secondAttribute="trailing" constant="16" id="cf0-Hm-XED"/>
                             <constraint firstItem="OOI-Fp-T0x" firstAttribute="leading" secondItem="SmH-EC-KCf" secondAttribute="leading" constant="16" id="gy0-PG-Ieq"/>
                             <constraint firstItem="dqm-5P-SPl" firstAttribute="top" secondItem="OOI-Fp-T0x" secondAttribute="bottom" constant="56.5" id="jo9-e9-ynP"/>
@@ -530,6 +552,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SmH-EC-KCf"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityLevelTextField" destination="IE7-NG-qZM" id="JW5-6K-MpV"/>
                         <outlet property="ageTextField" destination="1gM-fA-Bld" id="29p-7C-8Rl"/>
@@ -539,13 +563,14 @@
                         <outlet property="heightTextField" destination="2a5-3n-Zlp" id="QGk-7a-CRz"/>
                         <outlet property="nameTextField" destination="tw0-yc-y2s" id="LFx-vy-47X"/>
                         <outlet property="saveButton" destination="dqm-5P-SPl" id="Sz1-Ih-dCO"/>
+                        <outlet property="usernameLabel" destination="wBU-mx-Wkd" id="gFz-Ts-nWI"/>
                         <outlet property="weightTextField" destination="LkP-tC-CIp" id="isy-MR-1Nu"/>
                         <segue destination="kSY-2e-0gw" kind="show" identifier="TestingSummarySegue" id="hW4-8A-WZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jn-lI-U5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="873"/>
+            <point key="canvasLocation" x="3090" y="1108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mdo-RR-yp5">
@@ -563,7 +588,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhS-oZ-O8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234.7826086956525" y="162.72321428571428"/>
+            <point key="canvasLocation" x="2288" y="163"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

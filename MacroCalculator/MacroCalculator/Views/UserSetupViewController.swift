@@ -15,6 +15,7 @@ class UserSetupViewController: UIViewController {
     var password: String?
     
     
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -25,11 +26,16 @@ class UserSetupViewController: UIViewController {
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameLabel.text = username
         
         AppearanceHelper.style2(button: saveButton)
+        
 
         view.backgroundColor = AppearanceHelper.lightLime
     }

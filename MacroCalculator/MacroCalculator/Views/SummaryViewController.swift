@@ -12,18 +12,15 @@ class SummaryViewController: UIViewController {
 
     var userController: UserController?
     
-    
-    
     @IBOutlet weak var goalsView: UIView!
     @IBOutlet weak var mealsView: UIView!
-    
     
     @IBOutlet weak var proteinPercentageLabel: UILabel!
     @IBOutlet weak var fatsPercentageLabel: UILabel!
     @IBOutlet weak var carbsPercentageLabel: UILabel!
     
-    
-    
+    @IBOutlet weak var mealsButton: UIButton!
+        
     @IBOutlet weak var proteinTotalLabel: UILabel!
     @IBOutlet weak var fatsTotalLabel: UILabel!
     @IBOutlet weak var carbsTotalLabel: UILabel!
@@ -34,8 +31,9 @@ class SummaryViewController: UIViewController {
         if userController?.currentUser == nil {
             performSegue(withIdentifier: "EntrySegue", sender: self)
         }
-        guard let user = userController?.currentUser else { return }
+        guard let user = userController?.currentUser, isViewLoaded else { return }
         updateValues(user: user)
+        showMacros(user: user)
     }
     
     
@@ -44,10 +42,15 @@ class SummaryViewController: UIViewController {
         guard let user = userController?.currentUser else { return }
         setStyle()
         showMacros(user: user)
+        updateValues(user: user)
     }
     
 
     func setStyle() {
+        
+        AppearanceHelper.style2(button: mealsButton)
+        
+        
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor, AppearanceHelper.darkGreen.cgColor]
@@ -56,13 +59,13 @@ class SummaryViewController: UIViewController {
         goalsView.backgroundColor = .clear
         mealsView.backgroundColor = .clear
         
-        proteinPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
-        fatsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
-        carbsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
+        proteinPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 32)
+        fatsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 32)
+        carbsPercentageLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 32)
         
-        proteinTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
-        fatsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
-        carbsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 48)
+        proteinTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 32)
+        fatsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 32)
+        carbsTotalLabel.font = AppearanceHelper.threeDFont(textStyle: .title1, pointSize: 32)
     }
 
     func updateValues(user: User) {
@@ -71,21 +74,21 @@ class SummaryViewController: UIViewController {
     
 
     func showMacros(user: User) {
-        let proPerc = user.proteinsPercentage!
-        let fatPerc = user.fatsPercentage!
-        let carbPerc = user.carbsPercentage!
+        let proPerc = Double(round(10*user.proteinsPercentage!)/10)
+        let fatPerc = Double(round(100*user.fatsPercentage!)/100)
+        let carbPerc = Double(round(100*user.carbsPercentage!)/100)
         
-        let proTot = user.dailyProteins!
-        let fatTot = user.dailyFats!
-        let carbTot = user.dailyCarbs!
+        let proTot = Double(round(10*user.dailyProteins!)/10)
+        let fatTot = Double(round(10*user.dailyFats!)/10)
+        let carbTot = Double(round(10*user.dailyCarbs!)/10)
         
         proteinPercentageLabel.text = "\(proPerc)%"
         fatsPercentageLabel.text = "\(fatPerc)%"
         carbsPercentageLabel.text = "\(carbPerc)%"
         
-        proteinTotalLabel.text = "\(proTot)%"
-        fatsTotalLabel.text = "\(fatTot)%"
-        carbsTotalLabel.text = "\(carbTot)%"
+        proteinTotalLabel.text = "\(proTot)g"
+        fatsTotalLabel.text = "\(fatTot)g"
+        carbsTotalLabel.text = "\(carbTot)g"
     }
     
     
