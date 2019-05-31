@@ -425,10 +425,13 @@
                                             <segue destination="kSY-2e-0gw" kind="show" identifier="FromMealPlan" id="V4v-Bj-NVM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-OV-6Zn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-OV-6Zn">
                                         <rect key="frame" x="195" y="0.0" width="187" height="162"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                        <state key="normal" title="Select Meal Plan"/>
+                                        <state key="normal" title="Change Meal Plan"/>
+                                        <connections>
+                                            <action selector="changeMealPlan:" destination="daa-0m-fI4" eventType="touchUpInside" id="cLi-EH-NfU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -21,11 +21,15 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MealTable.delegate = self
-        MealTable.dataSource = self
-        
-        guard let user = userController?.currentUser else { return }
 
+        
+        updateViews()
+        
+    }
+    
+    func updateViews() {
+        guard let user = userController?.currentUser else { return }
+        
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [AppearanceHelper.darkGreen.cgColor, AppearanceHelper.lightLime.cgColor]
@@ -35,11 +39,14 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         AppearanceHelper.style2(button: selectMealPlanButton)
         
         MealTable.backgroundColor = AppearanceHelper.lightLime
+        self.reloadInputViews()
+        MealTable.reloadData()
+        MealTable.delegate = self
+        MealTable.dataSource = self
         
         mealResults = userController?.selectMealPlan(user: user)
-        print(mealResults)
-        
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +117,22 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
 
-
+    @IBAction func changeMealPlan(_ sender: Any) {
+        var user = userController?.currentUser!
+        
+        if userController?.currentUser?.mealPlan == "4 meals" {
+            userController?.currentUser?.mealPlan = "3 meals"
+        } else if userController?.currentUser?.mealPlan == "3 meals" {
+            userController?.currentUser?.mealPlan = "3 meal 2 snacks"
+        } else if userController?.currentUser?.mealPlan == "3 meals 2 snacks" {
+            userController?.currentUser?.mealPlan = "4 meals"
+        } else {
+            userController?.currentUser?.mealPlan = "3 meals"
+        }
+        updateViews()
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FromMealPlan" {
             guard let destinationVC = segue.destination as? SummaryViewController else { return }
