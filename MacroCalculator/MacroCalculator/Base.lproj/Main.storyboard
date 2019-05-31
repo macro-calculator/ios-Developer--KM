@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDO-D8-sxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1999" y="874"/>
+            <point key="canvasLocation" x="1699" y="895"/>
         </scene>
         <!--Summary-->
         <scene sceneID="xuO-C4-IwF">
@@ -304,7 +304,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
                                 <state key="normal" title="Meals &gt;"/>
                                 <connections>
-                                    <segue destination="daa-0m-fI4" kind="show" id="nMb-Fd-pUV"/>
+                                    <segue destination="daa-0m-fI4" kind="show" identifier="MealsSegue" id="nMb-Fd-pUV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -349,20 +349,114 @@
             </objects>
             <point key="canvasLocation" x="3144.9275362318845" y="162.72321428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Meal Breakdown-->
         <scene sceneID="7Bx-vs-o9N">
             <objects>
-                <viewController id="daa-0m-fI4" sceneMemberID="viewController">
+                <viewController id="daa-0m-fI4" customClass="MealViewController" customModule="MacroCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6b-83-g9r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXn-Ah-ICl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="640"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MealCell" rowHeight="200" id="YQ3-2m-Pzx" customClass="MealTableViewCell" customModule="MacroCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQ3-2m-Pzx" id="oMG-7y-Cyj">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f9D-Cl-N3a">
+                                                    <rect key="frame" x="28" y="19" width="358" height="162"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mK-8p-wsd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="83.5" height="162"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteins:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-nN-Hc2">
+                                                            <rect key="frame" x="91.5" y="0.0" width="83.5" height="162"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fats:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJc-q8-eYA">
+                                                            <rect key="frame" x="183" y="0.0" width="83.5" height="162"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr8-mL-83r">
+                                                            <rect key="frame" x="274.5" y="0.0" width="83.5" height="162"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="f9D-Cl-N3a" secondAttribute="bottom" constant="8" id="A0U-9l-2Vr"/>
+                                                <constraint firstItem="f9D-Cl-N3a" firstAttribute="top" secondItem="oMG-7y-Cyj" secondAttribute="topMargin" constant="8" id="hFt-CR-OZz"/>
+                                                <constraint firstItem="f9D-Cl-N3a" firstAttribute="leading" secondItem="oMG-7y-Cyj" secondAttribute="leadingMargin" constant="8" id="m6o-M7-FkN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f9D-Cl-N3a" secondAttribute="trailing" constant="8" id="pih-Eo-PP7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="carbsLabel" destination="wr8-mL-83r" id="YRQ-ZG-0w2"/>
+                                            <outlet property="fatsLabel" destination="EJc-q8-eYA" id="XTM-Fb-vFk"/>
+                                            <outlet property="mealLabel" destination="4mK-8p-wsd" id="l7L-gf-BXZ"/>
+                                            <outlet property="proteinsLabel" destination="aO8-nN-Hc2" id="RNm-oZ-QVo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-Ys-1zw">
+                                <rect key="frame" x="16" y="692" width="382" height="162"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5l-MT-9n3">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="162"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                                        <state key="normal" title="&lt; Back"/>
+                                        <connections>
+                                            <segue destination="kSY-2e-0gw" kind="show" identifier="FromMealPlan" id="V4v-Bj-NVM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-OV-6Zn">
+                                        <rect key="frame" x="195" y="0.0" width="187" height="162"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <state key="normal" title="Select Meal Plan"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CXn-Ah-ICl" firstAttribute="centerX" secondItem="S6b-83-g9r" secondAttribute="centerX" id="InM-T6-Nfs"/>
+                            <constraint firstItem="BfP-Ys-1zw" firstAttribute="top" secondItem="CXn-Ah-ICl" secondAttribute="bottom" constant="8" id="L5f-cm-jYg"/>
+                            <constraint firstItem="CXn-Ah-ICl" firstAttribute="height" secondItem="S6b-83-g9r" secondAttribute="height" multiplier="5/7" id="Sk5-NF-9RP"/>
+                            <constraint firstItem="CXn-Ah-ICl" firstAttribute="top" secondItem="9VZ-Qq-0Yh" secondAttribute="top" id="VSD-z2-svv"/>
+                            <constraint firstItem="9VZ-Qq-0Yh" firstAttribute="bottom" secondItem="BfP-Ys-1zw" secondAttribute="bottom" constant="8" id="Xe3-zB-Bsh"/>
+                            <constraint firstItem="CXn-Ah-ICl" firstAttribute="leading" secondItem="9VZ-Qq-0Yh" secondAttribute="leading" id="Zzs-1M-cyO"/>
+                            <constraint firstItem="BfP-Ys-1zw" firstAttribute="leading" secondItem="9VZ-Qq-0Yh" secondAttribute="leading" constant="16" id="fbn-Jv-JlG"/>
+                            <constraint firstItem="CXn-Ah-ICl" firstAttribute="trailing" secondItem="9VZ-Qq-0Yh" secondAttribute="trailing" id="kKt-Sr-ceb"/>
+                            <constraint firstItem="9VZ-Qq-0Yh" firstAttribute="trailing" secondItem="BfP-Ys-1zw" secondAttribute="trailing" constant="16" id="zeB-a4-4py"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9VZ-Qq-0Yh"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Meal Breakdown" id="Acq-Pp-j81"/>
+                    <connections>
+                        <outlet property="MealTable" destination="CXn-Ah-ICl" id="cBh-3r-pV8"/>
+                        <outlet property="backButton" destination="U5l-MT-9n3" id="0nq-u6-I97"/>
+                        <outlet property="selectMealPlanButton" destination="8xI-OV-6Zn" id="yoK-VR-lz9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3v-2b-nOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="163"/>
+            <point key="canvasLocation" x="4073.913043478261" y="162.72321428571428"/>
         </scene>
         <!--User Setup View Controller-->
         <scene sceneID="gEe-nl-V6z">
@@ -570,7 +664,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jn-lI-U5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3090" y="1108"/>
+            <point key="canvasLocation" x="2706" y="895"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mdo-RR-yp5">
@@ -592,7 +686,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vsu-Dj-JuY"/>
-        <segue reference="qbD-A1-avQ"/>
+        <segue reference="LJt-NS-iYX"/>
+        <segue reference="V4v-Bj-NVM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -125,7 +125,7 @@ class UserController {
         print(totalCal)
         updatedUser.totalCal = totalCal
         
-        updatedUser.dailyProteins = totalCal * 0.075
+        updatedUser.dailyProteins = totalCal * 0.075    //In grams
         updatedUser.dailyFats = totalCal * 0.033
         updatedUser.dailyCarbs = totalCal * 0.1
         
@@ -133,19 +133,63 @@ class UserController {
             let fats = updatedUser.dailyFats,
             let carbs = updatedUser.dailyCarbs else { return }
         
-        updatedUser.proteinsPercentage = totalCal / proteins
-        updatedUser.fatsPercentage = totalCal / fats
-        updatedUser.carbsPercentage = totalCal / carbs
+        let proCal = proteins * 4
+        let fatCal = fats * 9
+        let carbCal = carbs * 4
+        //Multiplied by number of calories per gram per Macro
         
-        //print(currentUser)
-        //print(updatedUser)
+        let proDec = proCal / totalCal
+        let fatDec = fatCal / totalCal
+        let carbDec = carbCal / totalCal
         
         
+        
+        
+        updatedUser.proteinsPercentage = proDec * 100
+        updatedUser.fatsPercentage = fatDec * 100
+        updatedUser.carbsPercentage = carbDec * 100
+        
+
         
         currentUser = updatedUser
         print(currentUser)
         
     }
+    
+    func selectMealPlan(user: User) -> MealResults {
+        switch(user.mealPlan) {
+        case "4 meals":
+            let proteinsPerMeal = user.dailyProteins! / 4
+            let fatsPerMeal = user.dailyFats! / 4
+            let carbsPerMeal = user.dailyCarbs! / 4
+            return MealResults(proteinsPerMeal: proteinsPerMeal, fatsPerMeal: fatsPerMeal, carbsPerMeal: carbsPerMeal)
+        
+        case "3 meals":
+            let proteinsPerMeal = user.dailyProteins! / 3
+            let fatsPerMeal = user.dailyFats! / 3
+            let carbsPerMeal = user.dailyCarbs! / 3
+            return MealResults(proteinsPerMeal: proteinsPerMeal, fatsPerMeal: fatsPerMeal, carbsPerMeal: carbsPerMeal)
+            
+        case "3 meals 2 snacks":
+            let proteinsPerSnack = user.dailyProteins! / 8
+            let fatsPerSnack = user.dailyFats! / 8
+            let carbsPerSnack = user.dailyCarbs! / 8
+            
+            let proteinsPerMeal = proteinsPerSnack * 2
+            let fatsPerMeal = fatsPerSnack * 2
+            let carbsPerMeal = carbsPerSnack * 2
+            
+            return MealResults(proteinsPerMeal: proteinsPerMeal, fatsPerMeal: fatsPerMeal, carbsPerMeal: carbsPerMeal, proteinsPerSnack: proteinsPerSnack, fatsPerSnack: fatsPerSnack, carbsPerSnack: carbsPerMeal)
+    
+        default:
+            let proteinsPerMeal = user.dailyProteins! / 3
+            let fatsPerMeal = user.dailyFats! / 3
+            let carbsPerMeal = user.dailyCarbs! / 3
+            return MealResults(proteinsPerMeal: proteinsPerMeal, fatsPerMeal: fatsPerMeal, carbsPerMeal: carbsPerMeal)
+        }
+    }
+    
+    
     
     
 }

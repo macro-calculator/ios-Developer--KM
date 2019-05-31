@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C425C8D6229F802400426BDC /* GoodChoice.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C425C8D5229F802300426BDC /* GoodChoice.ttf */; };
 		C435416922A060210095CFBA /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435416822A060210095CFBA /* UserController.swift */; };
+		C435416B22A18C860095CFBA /* MealResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435416A22A18C860095CFBA /* MealResults.swift */; };
+		C435416D22A192B00095CFBA /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435416C22A192B00095CFBA /* MealTableViewCell.swift */; };
 		C4EEEEF3229D92A40098CCB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEEEF2229D92A40098CCB4 /* AppDelegate.swift */; };
 		C4EEEEF8229D92A40098CCB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4EEEEF6229D92A40098CCB4 /* Main.storyboard */; };
 		C4EEEEFA229D92A50098CCB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4EEEEF9229D92A50098CCB4 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		C425C8D5229F802300426BDC /* GoodChoice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoodChoice.ttf; sourceTree = "<group>"; };
 		C435416822A060210095CFBA /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		C435416A22A18C860095CFBA /* MealResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealResults.swift; sourceTree = "<group>"; };
+		C435416C22A192B00095CFBA /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		C4EEEEEF229D92A40098CCB4 /* MacroCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EEEEF2229D92A40098CCB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4EEEEF7229D92A40098CCB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,8 +122,9 @@
 			children = (
 				C4EEEF12229D975A0098CCB4 /* LogInViewController.swift */,
 				C4EEEF16229D9FE70098CCB4 /* UserSetupViewController.swift */,
-				C4EEEF18229DA0220098CCB4 /* MealViewController.swift */,
 				C4EEEF14229D9EE50098CCB4 /* SummaryViewController.swift */,
+				C4EEEF18229DA0220098CCB4 /* MealViewController.swift */,
+				C435416C22A192B00095CFBA /* MealTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C4EEEF25229F2DE30098CCB4 /* User.swift */,
+				C435416A22A18C860095CFBA /* MealResults.swift */,
 				C435416822A060210095CFBA /* UserController.swift */,
 			);
 			path = Models;
@@ -247,6 +253,8 @@
 				C4EEEF19229DA0220098CCB4 /* MealViewController.swift in Sources */,
 				C435416922A060210095CFBA /* UserController.swift in Sources */,
 				C4EEEEF3229D92A40098CCB4 /* AppDelegate.swift in Sources */,
+				C435416D22A192B00095CFBA /* MealTableViewCell.swift in Sources */,
+				C435416B22A18C860095CFBA /* MealResults.swift in Sources */,
 				C4EEEF15229D9EE50098CCB4 /* SummaryViewController.swift in Sources */,
 				C4EEEF17229D9FE70098CCB4 /* UserSetupViewController.swift in Sources */,
 				C4EEEF1B229DEFC50098CCB4 /* AppearanceHelper.swift in Sources */,

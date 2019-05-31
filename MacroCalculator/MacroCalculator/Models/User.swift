@@ -32,7 +32,10 @@ struct User {
     var bmr: Double?
     var totalCal: Double?
     
-    init(username: String, password: String, name: String, email: String, gender: String, age: Int, height: Int, currentWeight: Int, activityLevel: String, goal: String, proteinsPercentage: Double? = 0, fatsPercentage: Double? = 0, carbsPercentage: Double? = 0, dailyProteins: Double? = 0, dailyFats: Double? = 0, dailyCarbs: Double? = 0, bmr: Double? = 0, totalCal: Double? = 0) {
+    var mealPlan: String?
+    
+    
+    init(username: String, password: String, name: String, email: String, gender: String, age: Int, height: Int, currentWeight: Int, activityLevel: String, goal: String, proteinsPercentage: Double? = 0, fatsPercentage: Double? = 0, carbsPercentage: Double? = 0, dailyProteins: Double? = 0, dailyFats: Double? = 0, dailyCarbs: Double? = 0, bmr: Double? = 0, totalCal: Double? = 0, mealPlan: String? = nil) {
         
         self.username = username
         self.password = password
@@ -52,6 +55,7 @@ struct User {
         self.dailyCarbs = dailyCarbs
         self.bmr = bmr
         self.totalCal = totalCal
+        self.mealPlan = mealPlan
         
         
     }

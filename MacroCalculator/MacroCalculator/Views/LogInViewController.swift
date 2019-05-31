@@ -47,7 +47,7 @@ class LogInViewController: UIViewController {
         if entryType == .logIn {
             
             if username == "kmac" && password == "password" {
-                userController.currentUser = User(username: "kmac", password: "password", name: "Kobe", email: "kobe@gmail", gender: "M", age: 22, height: 70, currentWeight: 150, activityLevel: "3-4 days", goal: "Moderate Weight Loss(15% deficit)")
+                userController.currentUser = User(username: "kmac", password: "password", name: "Kobe", email: "kobe@gmail", gender: "M", age: 22, height: 70, currentWeight: 150, activityLevel: "3-4 days", goal: "Moderate Weight Loss(15% deficit)", mealPlan: "3 meals 2 snacks")
                 
                 performSegue(withIdentifier: "ToSummary", sender: self)
                 
